@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Solution — MindAI</title>
+    <meta name="description" content="AI-generated structured solution for your personal problem." />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="solution.css" />
+</head>
+
+<body class="solution-page">
+
+    <!-- ─── Navbar ─── -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">
+                <div class="logo-icon">🧠</div>
+                Mind<span class="highlight">AI</span>
+            </a>
+            <div style="display:flex;gap:12px;align-items:center;">
+                <span class="session-chip" id="sessionChip">🔐 Session active</span>
+                <a href="/" class="btn btn-ghost" style="padding:8px 18px;font-size:0.85rem;">← New Problem</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ─── Problem Banner ─── -->
+    <div class="problem-banner" id="problemBanner">
+        <div class="container">
+            <a href="/" class="back-btn">← Back</a>
+            <div class="problem-info">
+                <span class="problem-tag" id="problemTag">🔍 Analyzing...</span>
+                <h2 id="problemDisplay">Loading your problem...</h2>
+                <div class="problem-meta">
+                    <span id="refinementBadgeWrapper"></span>
+                    <span>⏱️ Response: &lt;1 second</span>
+                    <span id="solvedTime">🕐 Just now</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── Main Solution Layout ─── -->
+    <div class="solution-main">
+        <div class="container">
+            <div class="solution-layout">
+
+                <!-- Left: Solution Sections -->
+                <div class="solution-sections" id="solutionSections">
+
+                    <!-- Interpretation -->
+                    <div class="solution-card card-interpretation open" id="cardInterpretation">
+                        <div class="solution-card-header" onclick="toggleCard(this.parentElement)">
+                            <div class="card-label">
+                                <div class="card-icon">🔍</div>
+                                <div>
+                                    <h3>Problem Interpretation</h3>
+                                    <p>How AI understands your situation</p>
+                                </div>
+                            </div>
+                            <span class="card-chevron">▼</span>
+                        </div>
+                        <div class="solution-card-body">
+                            <div class="solution-card-content">
+                                <p id="textInterpretation">Loading...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Root Cause -->
+                    <div class="solution-card card-rootcause open" id="cardRootCause">
+                        <div class="solution-card-header" onclick="toggleCard(this.parentElement)">
+                            <div class="card-label">
+                                <div class="card-icon">🎯</div>
+                                <div>
+                                    <h3>Root Cause Analysis</h3>
+                                    <p>Why this is happening at the core</p>
+                                </div>
+                            </div>
+                            <span class="card-chevron">▼</span>
+                        </div>
+                        <div class="solution-card-body">
+                            <div class="solution-card-content">
+                                <p id="textRootCause">Loading...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Immediate Action -->
+                    <div class="solution-card card-action open" id="cardAction">
+                        <div class="solution-card-header" onclick="toggleCard(this.parentElement)">
+                            <div class="card-label">
+                                <div class="card-icon">⚡</div>
+                                <div>
+                                    <h3>Immediate Action Step</h3>
+                                    <p>What to do right now — today</p>
+                                </div>
+                            </div>
+                            <span class="card-chevron">▼</span>
+                        </div>
+                        <div class="solution-card-body">
+                            <div class="solution-card-content">
+                                <p id="textAction">Loading...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7-Day Plan -->
+                    <div class="solution-card card-plan open" id="cardPlan">
+                        <div class="solution-card-header" onclick="toggleCard(this.parentElement)">
+                            <div class="card-label">
+                                <div class="card-icon">🗓️</div>
+                                <div>
+                                    <h3>7-Day Action Plan</h3>
+                                    <p>Day-by-day roadmap to real progress</p>
+                                </div>
+                            </div>
+                            <span class="card-chevron">▼</span>
+                        </div>
+                        <div class="solution-card-body">
+                            <div class="solution-card-content">
+                                <p id="textPlan">Loading...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Suggested Apps -->
+                    <div class="solution-card card-apps" id="cardApps">
+                        <div class="solution-card-header" onclick="toggleCard(this.parentElement)">
+                            <div class="card-label">
+                                <div class="card-icon">📱</div>
+                                <div>
+                                    <h3>Suggested Apps & Tools</h3>
+                                    <p>Curated tools for your specific situation</p>
+                                </div>
+                            </div>
+                            <span class="card-chevron">▼</span>
+                        </div>
+                        <div class="solution-card-body">
+                            <div class="solution-card-content">
+                                <p id="textApps">Loading...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Insight -->
+                    <div class="solution-card card-insight" id="cardInsight">
+                        <div class="solution-card-header" onclick="toggleCard(this.parentElement)">
+                            <div class="card-label">
+                                <div class="card-icon">✨</div>
+                                <div>
+                                    <h3>Motivational AI Insight</h3>
+                                    <p>Wisdom to carry you forward</p>
+                                </div>
+                            </div>
+                            <span class="card-chevron">▼</span>
+                        </div>
+                        <div class="solution-card-body">
+                            <div class="solution-card-content">
+                                <p id="textInsight">Loading...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /solution-sections -->
+
+                <!-- Right: Sidebar -->
+                <div class="solution-sidebar">
+
+                    <!-- Save Progress -->
+                    <div class="sidebar-card">
+                        <h4>Save Progress</h4>
+                        <button class="save-btn" id="saveBtn" onclick="saveProgress()">
+                            💾 Save This Solution
+                        </button>
+                        <p style="font-size:0.75rem;color:var(--text-muted);margin-top:10px;text-align:center;">
+                            Saves your solution and plan locally.
+                        </p>
+                    </div>
+
+                    <!-- Satisfaction -->
+                    <div class="sidebar-card">
+                        <h4>Was This Helpful?</h4>
+                        <p class="satisfaction-label">Rate this AI response:</p>
+                        <div class="satisfaction-row">
+                            <button class="thumb-btn" id="thumbUp" onclick="submitFeedback('up')">
+                                👍 Helpful
+                            </button>
+                            <button class="thumb-btn" id="thumbDown" onclick="submitFeedback('down')">
+                                👎 Not quite
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Refinement Buttons -->
+                    <div class="sidebar-card">
+                        <h4>Refine This Answer</h4>
+                        <p class="refinement-title">Not satisfied? Choose how to improve:</p>
+                        <div class="refinement-btns">
+                            <button class="refine-btn" id="btn-refine" onclick="refineAnswer('refine')">
+                                <span class="refine-icon">✏️</span> Refine Answer
+                            </button>
+                            <button class="refine-btn" id="btn-alternative" onclick="refineAnswer('alternative')">
+                                <span class="refine-icon">🔀</span> Give Alternative Solution
+                            </button>
+                            <button class="refine-btn" id="btn-simpler" onclick="refineAnswer('simpler')">
+                                <span class="refine-icon">🎯</span> Explain in Simpler Way
+                            </button>
+                            <button class="refine-btn" id="btn-practical" onclick="refineAnswer('practical')">
+                                <span class="refine-icon">🛠️</span> Make It Practical
+                            </button>
+                            <button class="refine-btn" id="btn-deeper" onclick="refineAnswer('deeper')">
+                                <span class="refine-icon">🔬</span> Go Deeper
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="sidebar-card" id="statsCard">
+                        <h4>Session Stats</h4>
+                        <div style="display:flex;flex-direction:column;gap:10px;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;">
+                                <span style="font-size:0.85rem;color:var(--text-secondary);">Refinements</span>
+                                <span style="font-weight:600;color:var(--accent)" id="statRefinements">0</span>
+                            </div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;">
+                                <span style="font-size:0.85rem;color:var(--text-secondary);">Category</span>
+                                <span style="font-size:0.85rem;color:var(--text-muted)" id="statCategory">—</span>
+                            </div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;">
+                                <span style="font-size:0.85rem;color:var(--text-secondary);">Last Refined</span>
+                                <span style="font-size:0.85rem;color:var(--text-muted)" id="statLastRefined">None</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /sidebar -->
+
+            </div><!-- /solution-layout -->
+        </div><!-- /container -->
+    </div><!-- /solution-main -->
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+    <script src="solution.js"></script>
+
+</body>
+
+</html>

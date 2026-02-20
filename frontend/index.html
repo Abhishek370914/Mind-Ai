@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MindAI — Human & AI Dashboard</title>
+  <meta name="description" content="Describe any problem you face — career, mental health, finance, relationships — and get instant AI-powered, structured solutions." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="solution.css" />
+</head>
+<body>
+
+<!-- ─── Navbar ─── -->
+<nav class="navbar">
+  <div class="container">
+    <a href="/" class="logo">
+      <div class="logo-icon">🧠</div>
+      Mind<span class="highlight">AI</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#categories">Categories</a></li>
+      <li><a href="#solve">Solve a Problem</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#solve" class="nav-cta">Get Started →</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ─── Hero ─── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      AI-Powered Life Solutions
+    </div>
+    <h1>
+      Every Problem Has<br>
+      <span class="gradient-text">An Intelligent Solution</span>
+    </h1>
+    <p>
+      Describe any challenge you're facing — career, relationships, mental health, finances, or more.
+      Our AI gives you a structured roadmap in seconds.
+    </p>
+    <div class="hero-actions">
+      <a href="#solve" class="btn btn-primary btn-lg">
+        🚀 Describe Your Problem
+      </a>
+      <a href="#features" class="btn btn-secondary btn-lg">
+        ✨ See How It Works
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-number">50K+</span>
+        <span class="stat-label">Problems Solved</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">6</span>
+        <span class="stat-label">Life Categories</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">&lt;1s</span>
+        <span class="stat-label">AI Response Time</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">94%</span>
+        <span class="stat-label">Satisfaction Rate</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Categories ─── -->
+<section class="section" id="categories">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Problem Categories</span>
+      <h2>What's Holding You Back?</h2>
+      <p>Our AI is trained across all major life domains. Click a category to auto-fill a starter prompt.</p>
+    </div>
+    <div class="categories-grid" id="categoriesGrid">
+      <div class="category-card" data-category="career" style="--cat-color:#4f9cf9"
+           onclick="selectCategory(this, 'I feel stuck in my career and don\'t know what direction to take. I\'m not growing in my current job.')">
+        <span class="cat-icon">💼</span>
+        <h3>Career & Work</h3>
+        <p>Job transitions, workplace stress, growth plateau</p>
+      </div>
+      <div class="category-card" data-category="mental" style="--cat-color:#a78bfa"
+           onclick="selectCategory(this, 'I\'ve been feeling overwhelmed and anxious lately. My stress levels are very high and I don\'t know how to cope.')">
+        <span class="cat-icon">🧠</span>
+        <h3>Mental Health</h3>
+        <p>Anxiety, burnout, depression, stress management</p>
+      </div>
+      <div class="category-card" data-category="finance" style="--cat-color:#34d399"
+           onclick="selectCategory(this, 'I have a lot of debt and I\'m struggling with money. I can\'t seem to save and my finances feel out of control.')">
+        <span class="cat-icon">💰</span>
+        <h3>Finance</h3>
+        <p>Debt, budgeting, savings, investment planning</p>
+      </div>
+      <div class="category-card" data-category="relationship" style="--cat-color:#f472b6"
+           onclick="selectCategory(this, 'My relationship has become strained. We argue constantly and I feel disconnected from my partner.')">
+        <span class="cat-icon">❤️</span>
+        <h3>Relationships</h3>
+        <p>Partner issues, family conflicts, communication</p>
+      </div>
+      <div class="category-card" data-category="health" style="--cat-color:#fb923c"
+           onclick="selectCategory(this, 'I\'ve been struggling with my health. I have low energy, poor sleep, and haven\'t been exercising regularly.')">
+        <span class="cat-icon">🏃‍♂️</span>
+        <h3>Health & Body</h3>
+        <p>Fitness, sleep, nutrition, chronic conditions</p>
+      </div>
+      <div class="category-card" data-category="productivity" style="--cat-color:#fbbf24"
+           onclick="selectCategory(this, 'I keep procrastinating on important tasks. I lack focus and motivation and don\'t get things done even when I want to.')">
+        <span class="cat-icon">⚡</span>
+        <h3>Productivity</h3>
+        <p>Procrastination, focus, goal setting, habits</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Divider ─── -->
+<div class="container"><div class="divider"></div></div>
+
+<!-- ─── Describe Your Problem ─── -->
+<section class="section" id="solve">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Describe Your Problem</span>
+      <h2>Tell Us What's Bothering You</h2>
+      <p>Be as specific as you want. The more detail you share, the more tailored your AI solution will be.</p>
+    </div>
+
+    <div class="problem-section fade-in">
+      <div class="problem-section-inner">
+        <div class="problem-ai-avatar">
+          <div class="ai-avatar">🤖</div>
+          <div class="ai-status">
+            <span class="ai-name">MindAI Assistant</span>
+            <span class="ai-ready"><span class="dot" style="background:var(--success)"></span> Ready to help</span>
+          </div>
+        </div>
+        <p class="problem-section-subtitle">I'm here to listen and provide structured, actionable guidance. What's on your mind?</p>
+
+        <form id="problemForm" onsubmit="submitProblem(event)">
+          <div class="textarea-wrapper">
+            <textarea
+              id="problemInput"
+              class="problem-textarea"
+              placeholder="Type what is really bothering you... (e.g., I feel lost in my career, I'm drowning in debt, my relationship is falling apart...)"
+              maxlength="2000"
+              rows="6"
+              oninput="updateCharCount(this)"
+              required
+            ></textarea>
+            <span class="char-count" id="charCount">0 / 2000</span>
+          </div>
+
+          <div class="problem-hints" style="margin-bottom:28px;">
+            <span class="hint-chip" onclick="appendHint('I feel completely overwhelmed and don\'t know where to start.')">😰 Overwhelmed</span>
+            <span class="hint-chip" onclick="appendHint('I\'m stuck and can\'t move forward no matter what I try.')">🧱 Stuck</span>
+            <span class="hint-chip" onclick="appendHint('I desperately need a clear action plan to fix this.')">📋 Need a Plan</span>
+            <span class="hint-chip" onclick="appendHint('I\'ve tried multiple things already but nothing seems to work.')">🔄 Nothing Works</span>
+          </div>
+
+          <div class="problem-footer">
+            <div class="footer-note">
+              <span style="color:var(--text-muted);font-size:0.85rem;">🔒 Your data is private · Stored locally</span>
+            </div>
+            <button type="submit" class="btn btn-solve" id="solveBtn">
+              <span class="btn-text">✨ Solve Now</span>
+              <span class="btn-spinner" style="display:none;"><span class="spinner"></span></span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Features ─── -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">How It Works</span>
+      <h2>AI That Actually Understands</h2>
+      <p>Six structured sections, five refinement modes, and instant response — your complete solution toolkit.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(79,156,249,0.12);color:var(--accent)">🔍</div>
+        <h3>Deep Problem Analysis</h3>
+        <p>Our AI interprets your situation, identifies root causes, and provides context-aware insights across 6 life categories.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(167,139,250,0.12);color:var(--accent-2)">🗓️</div>
+        <h3>7-Day Action Plan</h3>
+        <p>Not just advice — a concrete day-by-day plan so you can start making real progress immediately after reading.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(52,211,153,0.12);color:var(--accent-3)">🔄</div>
+        <h3>5 Refinement Modes</h3>
+        <p>Not satisfied? Instantly regenerate your solution: simpler, deeper, more practical, alternative approach, or refined.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(251,191,36,0.12);color:var(--warning)">📱</div>
+        <h3>Curated App Suggestions</h3>
+        <p>Specific apps and tools recommended for your exact situation — no generic lists, only what truly helps.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(244,114,182,0.12);color:#f472b6)">💾</div>
+        <h3>Save & Track Progress</h3>
+        <p>Save your solutions, rate responses with thumbs up/down, and track your satisfaction across multiple refinements.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(248,113,113,0.12);color:var(--danger)">⚡</div>
+        <h3>Instant Response</h3>
+        <p>Sub-second AI responses. No waiting, no spinning for 10 seconds — your solution appears immediately.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Footer ─── -->
+<footer>
+  <div class="container">
+    <p>© 2026 MindAI Dashboard · Built with Intelligence & Care</p>
+    <p style="color:var(--text-muted);font-size:0.8rem;">Not a substitute for professional medical, legal, or financial advice.</p>
+  </div>
+</footer>
+
+<!-- Toast Container -->
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="app.js"></script>
+<script>
+  function updateCharCount(el) {
+    document.getElementById('charCount').textContent = `${el.value.length} / 2000`;
+  }
+
+  function selectCategory(card, text) {
+    // Remove active from all
+    document.querySelectorAll('.category-card').forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
+    // Set textarea
+    const ta = document.getElementById('problemInput');
+    ta.value = text;
+    updateCharCount(ta);
+    ta.focus();
+    // Scroll to solve section
+    document.getElementById('solve').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  function appendHint(text) {
+    const ta = document.getElementById('problemInput');
+    const current = ta.value.trim();
+    ta.value = current ? current + ' ' + text : text;
+    updateCharCount(ta);
+    ta.focus();
+  }
+
+  async function submitProblem(e) {
+    e.preventDefault();
+    const problem = document.getElementById('problemInput').value.trim();
+    if (!problem || problem.length < 5) {
+      showToast('Please describe your problem in more detail.', 'error');
+      return;
+    }
+
+    const btn = document.getElementById('solveBtn');
+    const btnText = btn.querySelector('.btn-text');
+    const btnSpinner = btn.querySelector('.btn-spinner');
+
+    // Show loading (instant feel)
+    btnText.style.display = 'none';
+    btnSpinner.style.display = 'flex';
+    btn.disabled = true;
+
+    try {
+      const sessionId = getOrCreateSession();
+      const response = await fetch('/api/solve', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ problem, sessionId })
+      });
+
+      if (!response.ok) {
+        const err = await response.json();
+        throw new Error(err.error || 'Something went wrong');
+      }
+
+      const data = await response.json();
+
+      // Store in session storage and redirect
+      sessionStorage.setItem('currentSolution', JSON.stringify(data));
+      window.location.href = '/solution.html';
+
+    } catch (err) {
+      console.error(err);
+      showToast('Error: ' + err.message, 'error');
+      btnText.style.display = 'inline';
+      btnSpinner.style.display = 'none';
+      btn.disabled = false;
+    }
+  }
+</script>
+
+</body>
+</html>
